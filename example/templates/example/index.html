@@ -1,0 +1,23 @@
+{% extends 'example/base.html' %}
+{% load static %}
+
+{% block title %}Upload Your Files{% endblock %}
+
+{% block content %}
+    <div class="container mt-5">
+        <h1>Upload Your Files</h1>
+        <a href="{% url 'list' %}" class="btn btn-secondary">Go to Blob List</a>
+    </div>
+
+    <div class="container mt-3">
+        <div id="dropZone" class="border border-2 border-dashed p-4 text-center" style="cursor: pointer;">
+            <p>Drag and drop files here or click to select</p>
+            <input type="file" id="fileInput" multiple style="display: none;">
+        </div>
+        <button id="uploadBtn" class="btn btn-primary mt-2">Upload</button>
+        <div id="progressContainer"></div>
+    </div>
+
+    <!-- Include page-specific JS -->
+    <script src="{% static 'js/upload.js' %}"></script>
+{% endblock %}

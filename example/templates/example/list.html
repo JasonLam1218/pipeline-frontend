@@ -1,0 +1,21 @@
+<!-- templates/example/list.html -->
+{% extends 'example/base.html' %}
+{% load static %}
+
+{% block title %}Azure Blob Files{% endblock %}
+
+{% block content %}
+    <div class="container mt-5">
+        <h1>Azure Blob Files</h1>
+        <a href="{% url 'index' %}" class="btn btn-secondary">Back to Upload</a>
+    </div>
+
+    <div class="container mt-3">
+        <div id="tree"></div>  <!-- jsTree container -->
+        <button id="generateBtn" class="btn btn-primary mt-2">Generate</button>
+        <button id="downloadBtn" class="btn btn-success mt-2" disabled>Download</button>  <!-- Download button, disabled by default -->
+    </div>
+
+    <!-- Include page-specific JS (for jsTree, generate, download, etc.) -->
+    <script src="{% static 'js/list.js' %}"></script>
+{% endblock %}

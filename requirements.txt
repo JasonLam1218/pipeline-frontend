@@ -1,0 +1,6 @@
+Django==4.1.3
+requests
+python-dotenv
+azure-storage-blob
+azure-storage-queue
+whitenoise

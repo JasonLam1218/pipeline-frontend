@@ -1,0 +1,35 @@
+/* static/css/styles.css */
+/* Extracted and common styles */
+.fixed-top {
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    z-index: 1030;
+}
+
+.bg-light {
+    background-color: #f8f9fa !important;
+}
+
+.p-2 {
+    padding: .5rem !important;
+}
+
+.d-none {
+    display: none !important;
+}
+
+.mt-2 {
+    margin-top: .5rem !important;
+}
+
+.mt-3 {
+    margin-top: 1rem !important;
+}
+
+.mt-5 {
+    margin-top: 3rem !important;
+}
+
+/* Add any other extracted styles from original inline CSS here */

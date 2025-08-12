@@ -1,0 +1,39 @@
+<!-- templates/example/base.html -->
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}My App{% endblock %}</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <!-- Custom CSS (updated to match your file name: style.css) -->
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jstree/3.3.16/themes/default/style.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jstree/3.3.16/jstree.min.js"></script>
+    <link rel="shortcut icon" href="data:image/x-icon;," type="image/x-icon"> <!-- Empty Favicon -->
+</head>
+<body>
+    <!-- Global Progress Bar: Fixed at top -->
+    <div id="globalProgress" class="fixed-top bg-light p-2 d-none">
+        <div class="progress" role="progressbar" aria-valuemin="0" aria-valuemax="100" style="height: 20px;">
+            <div id="progressBar" class="progress-bar bg-info text-dark" style="width: 0%;">0%</div>
+        </div>
+        <button id="cancelBtn" class="btn btn-danger btn-sm mt-2">Cancel Task</button>
+    </div>
+
+    {% block content %}{% endblock %}
+
+    <!-- Common JS for progress (updated to match your file name: process.js) -->
+    <script src="{% static 'js/process.js' %}"></script>
+    <script>
+        $(document).ready(function() {
+            initGlobalProgress();
+        });
+    </script>
+</body>
+</html>
